@@ -48,6 +48,7 @@ pdf_to_csv/
 │   └── ocr.py                # OCR for scanned pages
 ├── output/
 │   └── generic_csv_writer.py # CSV output
+├── app.py                    # Streamlit Web UI
 ├── main.py                   # CLI entry point
 ├── requirements.txt
 └── README.md
@@ -68,7 +69,28 @@ venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 ```
 
-### Usage
+## 🖥️ Web UI (Recommended)
+
+The easiest way to use this tool:
+
+```bash
+streamlit run app.py
+```
+
+Then open http://localhost:8501 in your browser:
+
+1. **Upload** any PDF file
+2. **View** extracted content with stats and preview
+3. **Download** as CSV
+
+Features:
+- Drag & drop PDF upload
+- Toggle OCR on/off
+- Block type breakdown chart
+- Content preview table
+- One-click CSV download
+
+## ⌨️ CLI Usage
 
 ```bash
 # Single PDF
