@@ -1,32 +1,55 @@
-# PDF to CSV Extraction Module
-# Industry-grade dependencies for robust PDF processing
+# Document Intelligence Pipeline
+# Production-grade dependencies for robust PDF processing
 
-# Core PDF extraction libraries
-pdfplumber>=0.10.0          # Primary text extraction, handles most digital PDFs well
-PyMuPDF>=1.23.0             # Alternative extractor (fitz), fast and reliable
+# ============================================================================
+# CORE PDF EXTRACTION
+# ============================================================================
+pdfplumber>=0.10.0          # Primary text extraction with bounding boxes
+PyMuPDF>=1.23.0             # Alternative PDF backend (fast)
 pymupdf>=1.23.0             # Alias for PyMuPDF
 
-# OCR capabilities for scanned documents
+# ============================================================================
+# OCR CAPABILITIES
+# ============================================================================
 pytesseract>=0.3.10         # Python wrapper for Tesseract OCR
-Pillow>=10.0.0              # Image processing for OCR preparation
-opencv-python>=4.8.0        # Advanced image preprocessing (deskew, denoise)
+Pillow>=10.0.0              # Image processing
+opencv-python>=4.8.0        # Advanced image preprocessing (deskew, denoise, binarization)
 
-# Table extraction specialists
+# ============================================================================
+# SPATIAL INDEXING (for layout analysis)
+# ============================================================================
+rtree>=1.0.0                # R-tree spatial index (optional, has fallback)
+# Note: rtree requires libspatialindex. On Windows: conda install rtree
+
+# ============================================================================
+# TABLE EXTRACTION
+# ============================================================================
 camelot-py[cv]>=0.11.0      # Best for bordered tables
 tabula-py>=2.8.0            # Java-based, good for structured tables
 
-# Data handling and validation
+# ============================================================================
+# DATA HANDLING & VALIDATION
+# ============================================================================
 pandas>=2.0.0               # DataFrame operations and CSV export
 pydantic>=2.0.0             # Schema validation and type coercion
 pydantic-settings>=2.0.0    # Settings management
 
-# Configuration
+# ============================================================================
+# ML DATASET EXPORT (optional)
+# ============================================================================
+pyarrow>=14.0.0             # Parquet export for HuggingFace datasets
+
+# ============================================================================
+# CONFIGURATION & CLI
+# ============================================================================
 PyYAML>=6.0                 # YAML config file parsing
 python-dotenv>=1.0.0        # Environment variable management
 
-# Logging and CLI
-loguru>=0.7.0               # Modern logging with rotation and formatting
-click>=8.1.0                # CLI framework
+# ============================================================================
+# LOGGING & CLI
+# ============================================================================
+loguru>=0.7.0               # Modern logging with rotation
+click>=8.1.0                # CLI framework (legacy)
 rich>=13.0.0                # Beautiful terminal output and progress bars
 tqdm>=4.65.0                # Progress bars for batch processing
 
