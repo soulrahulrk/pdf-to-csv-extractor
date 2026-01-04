@@ -1,0 +1,43 @@
+# PDF to CSV Extraction Module
+# Industry-grade dependencies for robust PDF processing
+
+# Core PDF extraction libraries
+pdfplumber>=0.10.0          # Primary text extraction, handles most digital PDFs well
+PyMuPDF>=1.23.0             # Alternative extractor (fitz), fast and reliable
+pymupdf>=1.23.0             # Alias for PyMuPDF
+
+# OCR capabilities for scanned documents
+pytesseract>=0.3.10         # Python wrapper for Tesseract OCR
+Pillow>=10.0.0              # Image processing for OCR preparation
+opencv-python>=4.8.0        # Advanced image preprocessing (deskew, denoise)
+
+# Table extraction specialists
+camelot-py[cv]>=0.11.0      # Best for bordered tables
+tabula-py>=2.8.0            # Java-based, good for structured tables
+
+# Data handling and validation
+pandas>=2.0.0               # DataFrame operations and CSV export
+pydantic>=2.0.0             # Schema validation and type coercion
+pydantic-settings>=2.0.0    # Settings management
+
+# Configuration
+PyYAML>=6.0                 # YAML config file parsing
+python-dotenv>=1.0.0        # Environment variable management
+
+# Logging and CLI
+loguru>=0.7.0               # Modern logging with rotation and formatting
+click>=8.1.0                # CLI framework
+rich>=13.0.0                # Beautiful terminal output and progress bars
+tqdm>=4.65.0                # Progress bars for batch processing
+
+# Utilities
+python-dateutil>=2.8.0      # Robust date parsing
+chardet>=5.0.0              # Character encoding detection
+regex>=2023.0.0             # Enhanced regex with better Unicode support
+
+# Web UI
+streamlit>=1.29.0           # Web application framework
+
+# Testing (development)
+pytest>=7.4.0               # Testing framework
+pytest-cov>=4.1.0           # Coverage reporting
