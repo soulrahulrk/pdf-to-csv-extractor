@@ -1,54 +1,9 @@
-# PDF to CSV Extractor
-# Dependencies for PDF data extraction and CSV export
+# PDF to CSV - Generic Content Extractor
+# Minimal dependencies for pure content extraction
 
-# ============================================================================
-# CORE PDF EXTRACTION
-# ============================================================================
-pdfplumber>=0.10.0          # Primary text extraction with bounding boxes
+# Core extraction
+pdfplumber>=0.10.0          # PDF text and table extraction
 
-# ============================================================================
-# OCR CAPABILITIES
-# ============================================================================
-pytesseract>=0.3.10         # Python wrapper for Tesseract OCR
-Pillow>=10.0.0              # Image processing
-
-# ============================================================================
-# TABLE EXTRACTION
-# ============================================================================
-camelot-py[cv]>=0.11.0      # Table extraction from PDFs
-tabula-py>=2.8.0            # Alternative table extraction
-
-# ============================================================================
-# DATA HANDLING
-# ============================================================================
-pandas>=2.0.0               # DataFrame operations and CSV export
-
-# ============================================================================
-# CONFIGURATION
-# ============================================================================
-PyYAML>=6.0                 # YAML config file parsing
-
-# ============================================================================
-# CLI & LOGGING
-# ============================================================================
-loguru>=0.7.0               # Modern logging
-click>=8.1.0                # CLI framework
-rich>=13.0.0                # Terminal output formatting
-
-# ============================================================================
-# UTILITIES
-# ============================================================================
-python-dateutil>=2.8.0      # Robust date parsing
-chardet>=5.0.0              # Character encoding detection
-regex>=2023.0.0             # Enhanced regex
-
-# ============================================================================
-# WEB UI
-# ============================================================================
-streamlit>=1.29.0           # Web application framework
-
-# ============================================================================
-# TESTING (development)
-# ============================================================================
-pytest>=7.4.0               # Testing framework
-pytest-cov>=4.1.0           # Coverage reporting
+# OCR support (optional - for scanned PDFs)
+pytesseract>=0.3.10         # Tesseract OCR wrapper
+Pillow>=10.0.0              # Image processing for OCR
