@@ -1,66 +1,54 @@
-# Document Intelligence Pipeline
-# Production-grade dependencies for robust PDF processing
+# PDF to CSV Extractor
+# Dependencies for PDF data extraction and CSV export
 
 # ============================================================================
 # CORE PDF EXTRACTION
 # ============================================================================
 pdfplumber>=0.10.0          # Primary text extraction with bounding boxes
-PyMuPDF>=1.23.0             # Alternative PDF backend (fast)
-pymupdf>=1.23.0             # Alias for PyMuPDF
 
 # ============================================================================
 # OCR CAPABILITIES
 # ============================================================================
 pytesseract>=0.3.10         # Python wrapper for Tesseract OCR
 Pillow>=10.0.0              # Image processing
-opencv-python>=4.8.0        # Advanced image preprocessing (deskew, denoise, binarization)
-
-# ============================================================================
-# SPATIAL INDEXING (for layout analysis)
-# ============================================================================
-rtree>=1.0.0                # R-tree spatial index (optional, has fallback)
-# Note: rtree requires libspatialindex. On Windows: conda install rtree
 
 # ============================================================================
 # TABLE EXTRACTION
 # ============================================================================
-camelot-py[cv]>=0.11.0      # Best for bordered tables
-tabula-py>=2.8.0            # Java-based, good for structured tables
+camelot-py[cv]>=0.11.0      # Table extraction from PDFs
+tabula-py>=2.8.0            # Alternative table extraction
 
 # ============================================================================
-# DATA HANDLING & VALIDATION
+# DATA HANDLING
 # ============================================================================
 pandas>=2.0.0               # DataFrame operations and CSV export
-pydantic>=2.0.0             # Schema validation and type coercion
-pydantic-settings>=2.0.0    # Settings management
 
 # ============================================================================
-# ML DATASET EXPORT (optional)
-# ============================================================================
-pyarrow>=14.0.0             # Parquet export for HuggingFace datasets
-
-# ============================================================================
-# CONFIGURATION & CLI
+# CONFIGURATION
 # ============================================================================
 PyYAML>=6.0                 # YAML config file parsing
-python-dotenv>=1.0.0        # Environment variable management
 
 # ============================================================================
-# LOGGING & CLI
+# CLI & LOGGING
 # ============================================================================
-loguru>=0.7.0               # Modern logging with rotation
-click>=8.1.0                # CLI framework (legacy)
-rich>=13.0.0                # Beautiful terminal output and progress bars
-tqdm>=4.65.0                # Progress bars for batch processing
+loguru>=0.7.0               # Modern logging
+click>=8.1.0                # CLI framework
+rich>=13.0.0                # Terminal output formatting
 
-# Utilities
+# ============================================================================
+# UTILITIES
+# ============================================================================
 python-dateutil>=2.8.0      # Robust date parsing
 chardet>=5.0.0              # Character encoding detection
-regex>=2023.0.0             # Enhanced regex with better Unicode support
+regex>=2023.0.0             # Enhanced regex
 
-# Web UI
+# ============================================================================
+# WEB UI
+# ============================================================================
 streamlit>=1.29.0           # Web application framework
 
-# Testing (development)
+# ============================================================================
+# TESTING (development)
+# ============================================================================
 pytest>=7.4.0               # Testing framework
 pytest-cov>=4.1.0           # Coverage reporting
